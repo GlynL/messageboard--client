@@ -1,5 +1,5 @@
 import { AUTH_USER, AUTH_ERROR } from "./types";
-const ROOT_URL = "https://messageboard--glyn.herokuapp.com/api";
+import { ROOT_URL } from "../../variables";
 
 export const signup = (form, callback) => async dispatch => {
   try {

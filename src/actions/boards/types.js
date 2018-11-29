@@ -1,0 +1,3 @@
+export const ADD_BOARD = "add_board";
+export const FETCH_BOARDS = "fetch_boards";
+export const BOARD_ERROR = "board_error";
