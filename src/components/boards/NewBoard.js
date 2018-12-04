@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions/boards";
+import requireAuth from "../hocs/requireAuth";
 
 const INITIAL_STATE = { name: "" };
 
@@ -44,4 +45,4 @@ const mapStateToProps = state => ({ token: state.auth.authenticated });
 export default connect(
   mapStateToProps,
   actions
-)(NewBoard);
+)(requireAuth(NewBoard));

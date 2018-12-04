@@ -11,17 +11,11 @@ class BoardList extends Component {
   renderBoards() {
     return (
       <ul>
-        {
-          // TODO: remove console.log
-        }
-        {this.props.boards.boards.map(
-          board =>
-            console.log(board) || (
-              <li key={board._id}>
-                <Link to={`/${board._id}`}>{board.name}</Link>
-              </li>
-            )
-        )}
+        {this.props.boards.boards.map(board => (
+          <li key={board._id}>
+            <Link to={`/${board.name}`}>{board.name}</Link>
+          </li>
+        ))}
       </ul>
     );
   }

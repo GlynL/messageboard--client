@@ -1,4 +1,9 @@
-import { ADD_BOARD, FETCH_BOARDS, BOARD_ERROR } from "../actions/boards/types";
+import {
+  ADD_BOARD,
+  FETCH_BOARDS,
+  SET_ACTIVE,
+  BOARD_ERROR
+} from "../actions/boards/types";
 
 const INITIAL_STATE = {
   boards: [],
@@ -10,6 +15,8 @@ export default function(state = INITIAL_STATE, action) {
   switch (action.type) {
     case FETCH_BOARDS:
       return { ...state, boards: action.payload };
+    case SET_ACTIVE:
+      return { ...state, activeBoard: action.payload };
     // case ADD_BOARD:
     // return state
     case BOARD_ERROR:

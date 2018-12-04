@@ -1,5 +1,5 @@
 import { ROOT_URL } from "../../variables";
-import { ADD_BOARD, FETCH_BOARDS, BOARD_ERROR } from "./types";
+import { ADD_BOARD, FETCH_BOARDS, SET_ACTIVE, BOARD_ERROR } from "./types";
 
 export const addBoard = (form, token, callback) => async dispatch => {
   try {
@@ -11,7 +11,6 @@ export const addBoard = (form, token, callback) => async dispatch => {
       },
       body: JSON.stringify(form)
     });
-    console.log(res);
     if (!res.ok) throw new Error();
     const data = await res.json();
     dispatch({
@@ -42,4 +41,17 @@ export const fetchBoards = () => async dispatch => {
       payload: "Error fetching boards. Please try again."
     });
   }
+};
+
+export const setActive = (boards, name) => {
+  const board = boards.filter(board => board.name === name)[0];
+  if (!board)
+    return {
+      type: BOARD_ERROR,
+      payload: "Error finding board. Please try again."
+    };
+  return {
+    type: SET_ACTIVE,
+    payload: board
+  };
 };
