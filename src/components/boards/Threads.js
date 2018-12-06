@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import { compose } from "redux";
 
 class Threads extends Component {
-  componentDidMount() {
-    // /:board/threads - all threads api
-  }
-
   renderList() {
-    const { board } = this.props;
+    const { board, match } = this.props;
     return board.threads.map(thread => (
-      <li>
-        <h2>{thread.name}</h2>
+      <li key={thread._id}>
+        <Link to={`/${match.params.board}/${thread._id}`}>
+          <h2>{thread.title}</h2>
+          <p>{thread.text}</p>
+        </Link>
       </li>
     ));
   }
@@ -40,4 +40,7 @@ class Threads extends Component {
 
 const mapStateToProps = state => ({ board: state.boards.activeBoard });
 
-export default connect(mapStateToProps)(Threads);
+export default compose(
+  withRouter,
+  connect(mapStateToProps)
+)(Threads);

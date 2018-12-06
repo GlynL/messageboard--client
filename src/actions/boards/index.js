@@ -1,5 +1,11 @@
 import { ROOT_URL } from "../../variables";
-import { ADD_BOARD, FETCH_BOARDS, SET_ACTIVE, BOARD_ERROR } from "./types";
+import {
+  ADD_BOARD,
+  FETCH_BOARDS,
+  SET_ACTIVE,
+  BOARD_ERROR,
+  UPDATE_BOARD
+} from "./types";
 
 export const addBoard = (form, token, callback) => async dispatch => {
   try {
@@ -52,6 +58,13 @@ export const setActive = (boards, name) => {
     };
   return {
     type: SET_ACTIVE,
+    payload: board
+  };
+};
+
+export const updateBoard = board => {
+  return {
+    type: UPDATE_BOARD,
     payload: board
   };
 };

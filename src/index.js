@@ -14,6 +14,7 @@ import Signout from "./components/auth/Signout";
 import NewBoard from "./components/boards/NewBoard";
 import Board from "./components/boards/Board";
 import NewThread from "./components/boards/NewThread";
+import Thread from "./components/boards/Thread";
 
 const store = createStore(
   reducers,
@@ -34,6 +35,7 @@ ReactDOM.render(
           <Route path="/signin" component={Signin} />
           <Route path="/signout" component={Signout} />
           <Route path="/:board/new-thread" component={NewThread} />
+          <Route path="/:board/:thread" component={Thread} />
           <Route path="/:board" component={Board} />
         </Switch>
       </App>

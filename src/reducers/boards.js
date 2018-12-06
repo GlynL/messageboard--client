@@ -1,5 +1,5 @@
 import {
-  ADD_BOARD,
+  UPDATE_BOARD,
   FETCH_BOARDS,
   SET_ACTIVE,
   BOARD_ERROR
@@ -17,8 +17,14 @@ export default function(state = INITIAL_STATE, action) {
       return { ...state, boards: action.payload };
     case SET_ACTIVE:
       return { ...state, activeBoard: action.payload };
-    // case ADD_BOARD:
-    // return state
+    case UPDATE_BOARD: {
+      const boards = state.boards.map(board => {
+        if (board._id === action.payload._id) return action.payload;
+        return board;
+      });
+      return { ...state, boards };
+    }
+
     case BOARD_ERROR:
       return { ...state, errorMessage: action.payload };
     default:
