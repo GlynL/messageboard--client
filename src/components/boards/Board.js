@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions/boards";
 import Threads from "./Threads";
+import "../../styles/board.css";
 
 class Board extends Component {
   componentDidMount() {
@@ -20,10 +21,10 @@ class Board extends Component {
       return <div>loading...</div>;
     }
     return (
-      <div>
-        <h1>{this.props.board.name}</h1>
+      <section>
+        <h1 className="board__title">{this.props.board.name}</h1>
         <Threads />
-      </div>
+      </section>
     );
   }
 }

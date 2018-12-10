@@ -16,6 +16,8 @@ import Board from "./components/boards/Board";
 import NewThread from "./components/boards/NewThread";
 import Thread from "./components/boards/Thread";
 
+import "./styles/index.css";
+
 const store = createStore(
   reducers,
   {

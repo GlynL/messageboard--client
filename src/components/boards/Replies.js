@@ -1,18 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
 import NewReply from "./NewReply";
+import "../../styles/replies.css";
 
 const Replies = props => {
   const renderReplies = () =>
     props.thread.replies.map(reply => (
-      <li key={reply._id}>
+      <li className="replies__list-item" key={reply._id}>
         <p>{reply.text}</p>
       </li>
     ));
   return (
-    <div>
+    <div className="replies">
       <h1>Replies</h1>
-      <ul>{renderReplies()}</ul>
+      <ul className="replies__list">{renderReplies()}</ul>
       <NewReply />
     </div>
   );

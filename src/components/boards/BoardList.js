@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import * as actions from "../../actions/boards";
+import "../../styles/boards-list.css";
 
 class BoardList extends Component {
   componentDidMount() {
@@ -10,10 +11,12 @@ class BoardList extends Component {
 
   renderBoards() {
     return (
-      <ul>
+      <ul className="boards-list__list">
         {this.props.boards.boards.map(board => (
-          <li key={board._id}>
-            <Link to={`/${board.name}`}>{board.name}</Link>
+          <li className="boards-list__list-item" key={board._id}>
+            <Link className="boards-list__list-item-link" to={`/${board.name}`}>
+              {board.name}
+            </Link>
           </li>
         ))}
       </ul>
@@ -21,7 +24,7 @@ class BoardList extends Component {
   }
 
   render() {
-    return <div>{this.renderBoards()}</div>;
+    return <div className="boards-list">{this.renderBoards()}</div>;
   }
 }
 

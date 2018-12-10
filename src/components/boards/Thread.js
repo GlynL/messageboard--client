@@ -5,6 +5,7 @@ import * as boardActions from "../../actions/boards";
 import * as threadActions from "../../actions/threads";
 import isObjectEmpty from "../../helpers/isObjectEmpty";
 import Replies from "./Replies";
+import "../../styles/thread.css";
 
 class Thread extends Component {
   componentDidMount() {
@@ -12,7 +13,7 @@ class Thread extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // TODO: this flow not working - setup single lookup api?
+    // flow is ugly because no single get api
     this.props.setActive(this.props.boards, this.props.match.params.board);
     if (!isObjectEmpty(this.props.board)) {
       this.props.setActiveThread(
@@ -27,14 +28,17 @@ class Thread extends Component {
       return <div>loading...</div>;
     }
     return (
-      <div>
-        <Link to={`/${this.props.board.name}`}>
-          Back to {this.props.board.name}
-        </Link>
-        <h1>{this.props.thread.title}</h1>
-        <p>{this.props.thread.text}</p>
+      <section className="thread">
+        <div className="thread__info">
+          <Link to={`/${this.props.board.name}`}>
+            Back to {this.props.board.name}
+          </Link>
+          <h1>{this.props.thread.title}</h1>
+          <p>{this.props.thread.text}</p>
+        </div>
+
         <Replies />
-      </div>
+      </section>
     );
   }
 }
