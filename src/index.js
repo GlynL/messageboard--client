@@ -28,7 +28,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename="/messageboard">
       <App>
         <Switch>
           <Route exact path="/" component={Boards} />

@@ -1,5 +1,6 @@
 {
   "name": "messageboard--client",
+  "homepage": "https://glynlewington.com/messageboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
