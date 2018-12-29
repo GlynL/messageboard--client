@@ -14,7 +14,6 @@ export default function(state = INITIAL_STATE, action) {
     case THREAD_ERROR:
       return { ...state, errorMessage: action.payload };
     case SET_ACTIVE_THREAD:
-      console.log(action.payload);
       return { ...state, activeThread: action.payload };
     case ADD_REPLY:
       return { ...state };

@@ -1,23 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import * as actions from "../../actions/boards";
+import { setActive } from "../../actions/boards";
 import Threads from "./Threads";
+import isObjectEmpty from "../../helpers/isObjectEmpty";
 import "../../styles/board.css";
 
 class Board extends Component {
   componentDidMount() {
-    this.props.fetchBoards();
-  }
-
-  componentDidUpdate() {
-    this.props.setActive(this.props.boards, this.props.match.params.board);
+    this.props.setActive(this.props.match.params.board);
   }
 
   render() {
-    if (
-      Object.keys(this.props.board).length === 0 &&
-      this.props.board.constructor === Object
-    ) {
+    if (isObjectEmpty(this.props.board)) {
       return <div>loading...</div>;
     }
     return (
@@ -30,11 +24,10 @@ class Board extends Component {
 }
 
 const mapStateToProps = state => ({
-  board: state.boards.activeBoard,
-  boards: state.boards.boards
+  board: state.boards.activeBoard
 });
 
 export default connect(
   mapStateToProps,
-  actions
+  { setActive }
 )(Board);
