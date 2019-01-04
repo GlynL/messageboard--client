@@ -7,6 +7,8 @@ import "../../styles/threads.css";
 class Threads extends Component {
   renderList() {
     const { board, match } = this.props;
+    console.log(board);
+
     return board.threads.map(thread => (
       <li className="threads__list-item" key={thread._id}>
         <Link

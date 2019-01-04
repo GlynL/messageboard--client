@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches authenticated snapshot 1`] = `
+<nav
+  className="header__nav"
+>
+  <Link
+    className="header__nav-item"
+    replace={false}
+    to="/"
+  >
+    MessageBoard
+  </Link>
+  <div
+    className="header__nav-group"
+  >
+    <Link
+      className="header__nav-item"
+      replace={false}
+      to="/new-board"
+    >
+      New Board
+    </Link>
+    <Link
+      className="header__nav-item"
+      replace={false}
+      to="/signout"
+    >
+      Sign out
+    </Link>
+  </div>
+</nav>
+`;
+
+exports[`matches unauthenticated snapshot 1`] = `
+<nav
+  className="header__nav"
+>
+  <Link
+    className="header__nav-item"
+    replace={false}
+    to="/"
+  >
+    MessageBoard
+  </Link>
+  <div
+    className="header__nav-group"
+  >
+    <Link
+      className="header__nav-item"
+      replace={false}
+      to="/signup"
+    >
+      Sign Up
+    </Link>
+    <Link
+      className="header__nav-item"
+      replace={false}
+      to="/signin"
+    >
+      Sign In
+    </Link>
+  </div>
+</nav>
+`;
