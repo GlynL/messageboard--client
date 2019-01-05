@@ -1,10 +1,5 @@
 import React from "react";
 
-const defaultState = {
-  email: "",
-  password: ""
-};
-
 class Form extends React.Component {
   constructor(props) {
     super(props);
