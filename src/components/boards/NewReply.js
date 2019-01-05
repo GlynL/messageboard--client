@@ -9,7 +9,7 @@ const INITIAL_STATE = {
   text: ""
 };
 
-class NewReply extends Component {
+export class NewReply extends Component {
   constructor(props) {
     super(props);
     this.state = INITIAL_STATE;

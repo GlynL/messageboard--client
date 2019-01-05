@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot w/ auth 1`] = `
+<section
+  className="boards"
+>
+  <header
+    className="boards__header"
+  >
+    <h1
+      className="boards__header-title"
+    >
+      All Boards
+    </h1>
+    <p>
+      Click on a board to view threads.
+    </p>
+    <Link
+      replace={false}
+      to="/new-board"
+    >
+      Start a new Board.
+    </Link>
+  </header>
+  <Connect(BoardList) />
+</section>
+`;
+
+exports[`matches snapshot w/out auth 1`] = `
+<section
+  className="boards"
+>
+  <header
+    className="boards__header"
+  >
+    <h1
+      className="boards__header-title"
+    >
+      All Boards
+    </h1>
+    <p>
+      Click on a board to view threads.
+    </p>
+    <p>
+      Sign up to start a new board.
+    </p>
+  </header>
+  <Connect(BoardList) />
+</section>
+`;

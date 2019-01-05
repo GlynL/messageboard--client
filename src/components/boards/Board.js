@@ -5,7 +5,7 @@ import Threads from "./Threads";
 import isObjectEmpty from "../../helpers/isObjectEmpty";
 import "../../styles/board.css";
 
-class Board extends Component {
+export class Board extends Component {
   componentDidMount() {
     this.props.setActive(this.props.match.params.board);
   }

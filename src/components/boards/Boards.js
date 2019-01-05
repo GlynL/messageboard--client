@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import BoardList from "./BoardList";
 import "../../styles/boards.css";
 
-const Boards = props => {
+export const Boards = props => {
   return (
     <section className="boards">
       <header className="boards__header">

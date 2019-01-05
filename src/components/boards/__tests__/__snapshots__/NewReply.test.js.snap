@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot w/ auth & error 1`] = `
+<div>
+  <h2>
+    Add your reply
+  </h2>
+  <p>
+    test error
+  </p>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="text"
+    >
+      Text
+    </label>
+    <textarea
+      id="text"
+      name="text"
+      onChange={[Function]}
+      value=""
+    />
+    <button>
+      Add Reply
+    </button>
+  </form>
+</div>
+`;
+
+exports[`matches snapshot w/out auth 1`] = `
+<div>
+  Login to leave a reply.
+</div>
+`;
+
+exports[`w/ auth matches snapshot w auth 1`] = `
+<div>
+  <h2>
+    Add your reply
+  </h2>
+  <p />
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="text"
+    >
+      Text
+    </label>
+    <textarea
+      id="text"
+      name="text"
+      onChange={[Function]}
+      value=""
+    />
+    <button>
+      Add Reply
+    </button>
+  </form>
+</div>
+`;
