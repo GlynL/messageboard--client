@@ -1,24 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions/auth";
 
 import Form from "./Form";
 
-export class Signin extends Component {
-  handleSubmit = user => {
-    this.props.signin(user, () => this.props.history.push("/"));
-  };
-
-  render() {
-    return (
-      <div>
-        <h1>Sign In</h1>
-        {this.props.errorMessage && <div>{this.props.errorMessage}</div>}
-        <Form handleSubmit={this.handleSubmit} />
-      </div>
-    );
+export const Signin = props => {
+  function handleSubmit(user) {
+    props.signin(user, () => props.history.push("/"));
   }
-}
+
+  return (
+    <div>
+      <h1>Sign In</h1>
+      {props.errorMessage && <div>{props.errorMessage}</div>}
+      <Form handleSubmit={handleSubmit} buttonText="Sign In" />
+    </div>
+  );
+};
 
 const mapStateToProps = state => ({ errorMessage: state.auth.errorMessage });
 

@@ -35,10 +35,14 @@ class Form extends React.Component {
           value={this.state.password}
           onChange={this.handleChange}
         />
-        <button>Sign Up</button>
+        <button>{this.props.buttonText}</button>
       </form>
     );
   }
 }
+
+Form.defaultProps = {
+  buttonText: "Submit"
+};
 
 export default Form;
