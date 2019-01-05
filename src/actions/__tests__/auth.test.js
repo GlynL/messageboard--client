@@ -18,12 +18,9 @@ beforeEach(() => {
 });
 
 describe("signup", () => {
-  let callback, localStorage;
+  let callback;
   beforeEach(() => {
     callback = jest.fn();
-    localStorage = {
-      setItem: jest.fn()
-    };
   });
 
   it("creates AUTH_USER action after signup fetch", async () => {
@@ -53,5 +50,38 @@ describe("signup", () => {
     ];
     await store.dispatch(actions.signup({}, callback));
     expect(store.getActions()).toEqual(expectedActions);
+  });
+});
+
+describe("signin", () => {
+  let callback;
+  beforeEach(() => {
+    callback = jest.fn();
+  });
+
+  it("creates AUTH_USER action after signin fetch", async () => {
+    expect.assertions(2);
+    const token = "mock token";
+    fetch.mockResponseOnce(JSON.stringify({ token }));
+    const expectedActions = [{ type: types.AUTH_USER, payload: token }];
+    await store.dispatch(actions.signin({}, callback));
+    expect(store.getActions()).toEqual(expectedActions);
+    expect(callback).toHaveBeenCalled();
+  });
+
+  it("creates AUTH_ERROR action after signin fetch failure", async () => {
+    expect.assertions(1);
+    fetch.mockReject(new Error("mock error"));
+    const expectedActions = [
+      { type: types.AUTH_ERROR, payload: "Email/password do not match." }
+    ];
+    await store.dispatch(actions.signin({}, callback));
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+});
+
+describe("signout", () => {
+  it("creates AUTH_USER action w/ empty payload", () => {
+    expect(actions.signout()).toEqual({ type: types.AUTH_USER, payload: "" });
   });
 });
