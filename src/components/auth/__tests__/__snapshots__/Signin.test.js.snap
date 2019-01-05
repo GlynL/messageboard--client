@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Signin with error prop correctly 1`] = `
+<div>
+  <h1>
+    Sign In
+  </h1>
+  <div>
+    test error
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="email"
+    >
+      Email
+    </label>
+    <input
+      name="email"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <label
+      htmlFor="password"
+    />
+    <input
+      name="password"
+      onChange={[Function]}
+      type="password"
+      value=""
+    />
+    <button>
+      Sign Up
+    </button>
+  </form>
+</div>
+`;
+
+exports[`w/out props renders Signin correctly 1`] = `
+<div>
+  <h1>
+    Sign In
+  </h1>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="email"
+    >
+      Email
+    </label>
+    <input
+      name="email"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <label
+      htmlFor="password"
+    />
+    <input
+      name="password"
+      onChange={[Function]}
+      type="password"
+      value=""
+    />
+    <button>
+      Sign Up
+    </button>
+  </form>
+</div>
+`;
