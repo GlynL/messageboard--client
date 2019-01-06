@@ -7,7 +7,7 @@ import isObjectEmpty from "../../helpers/isObjectEmpty";
 import Replies from "./Replies";
 import "../../styles/thread.css";
 
-class Thread extends Component {
+export class Thread extends Component {
   componentDidMount() {
     this.props.setActive(this.props.match.params.board);
   }

@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshots renders w error correctly 1`] = `
+<div>
+  <p>
+    test error
+  </p>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="title"
+    >
+      Title
+    </label>
+    <input
+      id="title"
+      name="title"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <label
+      htmlFor="text"
+    >
+      Text
+    </label>
+    <textarea
+      id="text"
+      name="text"
+      onChange={[Function]}
+      value=""
+    />
+    <button>
+      Create Thread
+    </button>
+  </form>
+</div>
+`;
+
+exports[`snapshots renders w/out error correctly 1`] = `
+<div>
+  <p />
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="title"
+    >
+      Title
+    </label>
+    <input
+      id="title"
+      name="title"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <label
+      htmlFor="text"
+    >
+      Text
+    </label>
+    <textarea
+      id="text"
+      name="text"
+      onChange={[Function]}
+      value=""
+    />
+    <button>
+      Create Thread
+    </button>
+  </form>
+</div>
+`;

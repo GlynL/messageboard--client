@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`initial load matches snapshot 1`] = `
+<div>
+  loading...
+</div>
+`;
+
+exports[`w/ board prop matches snapshot w/ thread 1`] = `
+<section
+  className="thread"
+>
+  <div
+    className="thread__info"
+  >
+    <Link
+      replace={false}
+      to="/mock board"
+    >
+      Back to 
+      mock board
+    </Link>
+    <h1>
+      mock thread
+    </h1>
+    <p>
+      mock text
+    </p>
+  </div>
+  <Connect(Replies) />
+</section>
+`;
