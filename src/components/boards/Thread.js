@@ -1,20 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import * as boardActions from "../../actions/boards";
-import * as threadActions from "../../actions/threads";
+import { setActive } from "../../actions/boards";
+import { setActiveThread } from "../../actions/threads";
 import isObjectEmpty from "../../helpers/isObjectEmpty";
 import Replies from "./Replies";
 import "../../styles/thread.css";
 
-class Thread extends Component {
+export class Thread extends Component {
   componentDidMount() {
-    this.props.fetchBoards();
+    this.props.setActive(this.props.match.params.board);
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // flow is ugly because no single get api
-    this.props.setActive(this.props.boards, this.props.match.params.board);
     if (!isObjectEmpty(this.props.board)) {
       this.props.setActiveThread(
         this.props.match.params.thread,
@@ -45,11 +43,10 @@ class Thread extends Component {
 
 const mapStateToProps = state => ({
   board: state.boards.activeBoard,
-  boards: state.boards.boards,
   thread: state.threads.activeThread
 });
 
 export default connect(
   mapStateToProps,
-  { ...boardActions, ...threadActions }
+  { setActive, setActiveThread }
 )(Thread);

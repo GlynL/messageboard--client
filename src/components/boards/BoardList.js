@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import * as actions from "../../actions/boards";
 import "../../styles/boards-list.css";
 
-class BoardList extends Component {
+export class BoardList extends Component {
   componentDidMount() {
     this.props.fetchBoards();
   }

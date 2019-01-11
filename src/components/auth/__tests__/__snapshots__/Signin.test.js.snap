@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Signin with error prop correctly 1`] = `
+<div>
+  <h1>
+    Sign In
+  </h1>
+  <div>
+    test error
+  </div>
+  <Form
+    buttonText="Sign In"
+    handleSubmit={[Function]}
+  />
+</div>
+`;
+
+exports[`w/out props renders Signin correctly 1`] = `
+<div>
+  <h1>
+    Sign In
+  </h1>
+  <Form
+    buttonText="Sign In"
+    handleSubmit={[Function]}
+  />
+</div>
+`;

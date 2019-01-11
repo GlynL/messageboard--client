@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="replies"
+>
+  <h1>
+    Replies
+  </h1>
+  <ul
+    className="replies__list"
+  >
+    <li
+      className="replies__list-item"
+      key="1"
+    >
+      <p>
+        mock reply 1
+      </p>
+    </li>
+    <li
+      className="replies__list-item"
+      key="2"
+    >
+      <p>
+        mock reply 2
+      </p>
+    </li>
+  </ul>
+  <withRouter(Connect(NewReply)) />
+</div>
+`;

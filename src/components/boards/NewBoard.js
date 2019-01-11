@@ -5,7 +5,7 @@ import requireAuth from "../hocs/requireAuth";
 
 const INITIAL_STATE = { name: "" };
 
-class NewBoard extends Component {
+export class NewBoard extends Component {
   constructor(props) {
     super(props);
     this.state = INITIAL_STATE;

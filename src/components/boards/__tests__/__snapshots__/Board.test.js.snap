@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`with board prop -loaded from componentDidMount matches snapshot 1`] = `
+<section>
+  <h1
+    className="board__title"
+  >
+    test board
+  </h1>
+  <withRouter(Connect(Threads)) />
+</section>
+`;
+
+exports[`without board fetched matches snapshot 1`] = `
+<div>
+  loading...
+</div>
+`;

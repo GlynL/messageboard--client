@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "../styles/header.css";
 
-const Header = props => {
+export const Header = props => {
   function renderLinks() {
     if (props.authenticated) {
       return (

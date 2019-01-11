@@ -49,17 +49,21 @@ export const fetchBoards = () => async dispatch => {
   }
 };
 
-export const setActive = (boards, name) => {
-  const board = boards.filter(board => board.name === name)[0];
-  if (!board)
-    return {
+export const setActive = name => async dispatch => {
+  try {
+    const res = await fetch(`${ROOT_URL}/boards?name=${name}`);
+    if (!res.ok) throw new Error();
+    const board = await res.json();
+    dispatch({
+      type: SET_ACTIVE,
+      payload: board
+    });
+  } catch (err) {
+    dispatch({
       type: BOARD_ERROR,
       payload: "Error finding board. Please try again."
-    };
-  return {
-    type: SET_ACTIVE,
-    payload: board
-  };
+    });
+  }
 };
 
 export const updateBoard = board => {

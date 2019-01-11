@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot with boards 1`] = `
+<div
+  className="boards-list"
+>
+  <ul
+    className="boards-list__list"
+  >
+    <li
+      className="boards-list__list-item"
+      key="1"
+    >
+      <Link
+        className="boards-list__list-item-link"
+        replace={false}
+        to="/board 1"
+      >
+        board 1
+      </Link>
+    </li>
+    <li
+      className="boards-list__list-item"
+      key="2"
+    >
+      <Link
+        className="boards-list__list-item-link"
+        replace={false}
+        to="/board 2"
+      >
+        board 2
+      </Link>
+    </li>
+  </ul>
+</div>
+`;

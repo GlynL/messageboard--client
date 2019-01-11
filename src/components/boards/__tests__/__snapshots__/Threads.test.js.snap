@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot initial loading 1`] = `
+<div>
+  loading...
+</div>
+`;
+
+exports[`with board & thread prop matches snapshot w/ auth 1`] = `
+<div
+  className="threads"
+>
+  <h1
+    className="threads__title"
+  >
+    Threads
+  </h1>
+  <div>
+    <Link
+      replace={false}
+      to="/mockboard/new-thread"
+    >
+      Start new thread.
+    </Link>
+  </div>
+  <ul
+    className="threads__list"
+  >
+    <li
+      className="threads__list-item"
+      key="1"
+    >
+      <Link
+        className="threads__list-item-link"
+        replace={false}
+        to="/mockboard/1"
+      >
+        <h2
+          className="threads__list-item-link-heading"
+        >
+          mockthread 1
+        </h2>
+        <p
+          className="threads__list-item-link-subheading"
+        >
+          mock text
+        </p>
+      </Link>
+    </li>
+    <li
+      className="threads__list-item"
+      key="2"
+    >
+      <Link
+        className="threads__list-item-link"
+        replace={false}
+        to="/mockboard/2"
+      >
+        <h2
+          className="threads__list-item-link-heading"
+        >
+          mockthread 2
+        </h2>
+        <p
+          className="threads__list-item-link-subheading"
+        >
+          mock text
+        </p>
+      </Link>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`with board & thread prop matches snapshot w/out auth 1`] = `
+<div
+  className="threads"
+>
+  <h1
+    className="threads__title"
+  >
+    Threads
+  </h1>
+  <p>
+    Sign up to start your own thread.
+  </p>
+  <ul
+    className="threads__list"
+  >
+    <li
+      className="threads__list-item"
+      key="1"
+    >
+      <Link
+        className="threads__list-item-link"
+        replace={false}
+        to="/mockboard/1"
+      >
+        <h2
+          className="threads__list-item-link-heading"
+        >
+          mockthread 1
+        </h2>
+        <p
+          className="threads__list-item-link-subheading"
+        >
+          mock text
+        </p>
+      </Link>
+    </li>
+    <li
+      className="threads__list-item"
+      key="2"
+    >
+      <Link
+        className="threads__list-item-link"
+        replace={false}
+        to="/mockboard/2"
+      >
+        <h2
+          className="threads__list-item-link-heading"
+        >
+          mockthread 2
+        </h2>
+        <p
+          className="threads__list-item-link-subheading"
+        >
+          mock text
+        </p>
+      </Link>
+    </li>
+  </ul>
+</div>
+`;

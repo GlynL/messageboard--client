@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<section>
+  <header>
+    <h1>
+      Add New Board
+    </h1>
+  </header>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="name"
+    >
+      Name
+    </label>
+    <input
+      name="name"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button>
+      Add Board
+    </button>
+  </form>
+</section>
+`;
