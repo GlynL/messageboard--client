@@ -10,7 +10,7 @@ export const Signup = props => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Signup</h1>
       {props.errorMessage && <div>{props.errorMessage}</div>}
       <Form handleSubmit={handleSubmit} buttonText="Sign Up" />

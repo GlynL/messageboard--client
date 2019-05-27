@@ -1,0 +1,27 @@
+.form {
+  display: grid;
+  grid-template-columns: 80px 200px;
+}
+
+.form__label {
+  padding: 7px;
+}
+.form__input {
+  padding: 7px;
+}
+.form__button {
+  background: var(--primary-color);
+  border: 1px solid var(--light-color);
+  color: var(--light-color);
+  padding: 7px 0 7px 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.form__button:hover,
+.form__button:focus {
+  background: var(--light-color);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}

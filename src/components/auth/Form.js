@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styles/form.css";
 
 class Form extends React.Component {
   constructor(props) {
@@ -20,22 +21,28 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="email">Email</label>
+      <form className="form" onSubmit={this.handleSubmit}>
+        <label className="form__label" htmlFor="email">
+          Email
+        </label>
         <input
+          className="form__input"
           type="text"
           name="email"
           value={this.state.email}
           onChange={this.handleChange}
         />
-        <label htmlFor="password" />
+        <label className="form__label" htmlFor="password">
+          Password
+        </label>
         <input
+          className="form__input"
           type="password"
           name="password"
           value={this.state.password}
           onChange={this.handleChange}
         />
-        <button>{this.props.buttonText}</button>
+        <button className="form__button">{this.props.buttonText}</button>
       </form>
     );
   }
