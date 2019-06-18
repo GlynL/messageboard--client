@@ -6,3 +6,14 @@
 .replies__list-item {
   border-bottom: 1px solid white;
 }
+
+.new-reply-form__text {
+  display: block;
+}
+.new-reply-form__btn {
+  display: block;
+  margin-top: 0.5rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  padding: 0.5rem;
+}

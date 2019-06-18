@@ -11,7 +11,7 @@ export const Signup = props => {
 
   return (
     <div className="container">
-      <h1>Signup</h1>
+      <h1>Sign Up</h1>
       {props.errorMessage && <div>{props.errorMessage}</div>}
       <Form handleSubmit={handleSubmit} buttonText="Sign Up" />
     </div>

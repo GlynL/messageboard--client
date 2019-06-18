@@ -8,9 +8,6 @@ export const Header = props => {
     if (props.authenticated) {
       return (
         <div className="header__nav-group">
-          <Link className="header__nav-item" to="/new-board">
-            New Board
-          </Link>
           <Link className="header__nav-item" to="/signout">
             Sign out
           </Link>

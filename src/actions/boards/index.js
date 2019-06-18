@@ -18,11 +18,6 @@ export const addBoard = (form, token, callback) => async dispatch => {
       body: JSON.stringify(form)
     });
     if (!res.ok) throw new Error();
-    const data = await res.json();
-    dispatch({
-      type: ADD_BOARD,
-      payload: data
-    });
     callback();
   } catch (e) {
     dispatch({

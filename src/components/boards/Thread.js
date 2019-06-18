@@ -5,6 +5,7 @@ import { setActive } from "../../actions/boards";
 import { setActiveThread } from "../../actions/threads";
 import isObjectEmpty from "../../helpers/isObjectEmpty";
 import Replies from "./Replies";
+import Loader from "../common/Loader";
 import "../../styles/thread.css";
 
 export class Thread extends Component {
@@ -12,8 +13,8 @@ export class Thread extends Component {
     this.props.setActive(this.props.match.params.board);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (!isObjectEmpty(this.props.board)) {
+  componentDidUpdate() {
+    if (!isObjectEmpty(this.props.board) && isObjectEmpty(this.props.thread)) {
       this.props.setActiveThread(
         this.props.match.params.thread,
         this.props.board
@@ -21,21 +22,23 @@ export class Thread extends Component {
     }
   }
 
+  handleClick = () => this.props.history.push(`/${this.props.board.name}`);
+
   render() {
     if (isObjectEmpty(this.props.thread)) {
-      return <div>loading...</div>;
+      return <Loader />;
     }
     return (
       <section className="thread">
         <div className="thread__info">
-          <Link to={`/${this.props.board.name}`}>
+          <Link className="btn btn--danger" to={`/${this.props.board.name}`}>
             Back to {this.props.board.name}
           </Link>
           <h1>{this.props.thread.title}</h1>
           <p>{this.props.thread.text}</p>
         </div>
 
-        <Replies />
+        <Replies replies={this.props.thread.replies} />
       </section>
     );
   }

@@ -4,8 +4,9 @@ import NewReply from "./NewReply";
 import "../../styles/replies.css";
 
 export const Replies = props => {
+  console.log(props.replies);
   const renderReplies = () =>
-    props.thread.replies.map(reply => (
+    props.replies.map(reply => (
       <li className="replies__list-item" key={reply._id}>
         <p>{reply.text}</p>
       </li>
@@ -19,6 +20,8 @@ export const Replies = props => {
   );
 };
 
-const mapStateToProps = state => ({ thread: state.threads.activeThread });
+// const mapStateToProps = state => ({
+//   replies: state.threads.activeThread.replies
+// });
 
-export default connect(mapStateToProps)(Replies);
+export default /* connect(mapStateToProps) */ Replies;

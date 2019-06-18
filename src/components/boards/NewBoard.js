@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../actions/boards";
 import requireAuth from "../hocs/requireAuth";
@@ -21,19 +22,26 @@ export class NewBoard extends Component {
 
   render() {
     return (
-      <section>
+      <section className="container">
         <header>
-          <h1>Add New Board</h1>
+          <Link className=" btn btn--danger" to="/">
+            Back To Boards
+          </Link>
+          <h1>Create New Board</h1>
         </header>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="name">Name</label>
+        <form className="form" onSubmit={this.handleSubmit}>
+          <label className="form__label" htmlFor="name">
+            Name
+          </label>
           <input
+            className="form__input"
             type="text"
             name="name"
+            placeholder="sweet new board"
             value={this.state.name}
             onChange={this.handleChange}
           />
-          <button>Add Board</button>
+          <button className="btn">Create</button>
         </form>
       </section>
     );

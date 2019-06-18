@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import { compose } from "redux";
 import "../../styles/threads.css";
+import Loader from "../common/Loader";
 
 export class Threads extends Component {
   renderList() {
@@ -25,7 +26,7 @@ export class Threads extends Component {
     if (this.props.authed) {
       return (
         <div>
-          <Link to={`/${this.props.board.name}/new-thread`}>
+          <Link className="btn" to={`/${this.props.board.name}/new-thread`}>
             Start new thread.
           </Link>
         </div>
@@ -39,15 +40,14 @@ export class Threads extends Component {
       Object.keys(this.props.board).length === 0 &&
       this.props.board.constructor === Object
     ) {
-      return <div>loading...</div>;
+      return <Loader />;
     }
 
     return (
       <div className="threads">
         <h1 className="threads__title">Threads</h1>
-        {this.renderNewThreadLink()}
-
         <ul className="threads__list">{this.renderList()}</ul>
+        {this.renderNewThreadLink()}
       </div>
     );
   }

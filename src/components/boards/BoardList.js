@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import * as actions from "../../actions/boards";
+import Loader from "../common/Loader";
 import "../../styles/boards-list.css";
 
 export class BoardList extends Component {
@@ -22,9 +23,16 @@ export class BoardList extends Component {
       </ul>
     );
   }
-
   render() {
-    return <div className="boards-list">{this.renderBoards()}</div>;
+    return (
+      <div className="boards-list">
+        {this.props.boards.boards.length === 0 ? (
+          <Loader />
+        ) : (
+          this.renderBoards()
+        )}
+      </div>
+    );
   }
 }
 

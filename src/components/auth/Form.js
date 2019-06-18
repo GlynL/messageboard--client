@@ -42,7 +42,7 @@ class Form extends React.Component {
           value={this.state.password}
           onChange={this.handleChange}
         />
-        <button className="form__button">{this.props.buttonText}</button>
+        <button className="btn">{this.props.buttonText}</button>
       </form>
     );
   }

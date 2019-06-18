@@ -34,20 +34,21 @@ export class NewReply extends Component {
   };
 
   render() {
-    if (!this.props.token) return <div>Login to leave a reply.</div>;
+    if (!this.props.token) return <div>Login to leave a comment.</div>;
     return (
       <div>
-        <h2>Add your reply</h2>
+        <h2>Add Comment</h2>
         <p>{this.props.error}</p>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="text">Text</label>
+        <form className="new-reply-form" onSubmit={this.handleSubmit}>
           <textarea
+            className="new-reply-form__text"
             onChange={this.handleChange}
             value={this.state.text}
             name="text"
             id="text"
+            placeholder="This is so cool!"
           />
-          <button>Add Reply</button>
+          <button className="btn">Comment</button>
         </form>
       </div>
     );

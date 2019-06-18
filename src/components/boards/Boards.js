@@ -9,11 +9,16 @@ export const Boards = props => {
     <section className="boards">
       <header className="boards__header">
         <h1 className="boards__header-title">All Boards</h1>
-        <p>Click on a board to view threads.</p>
-        {props.authed && <Link to="/new-board">Start a new Board.</Link>}
-        {!props.authed && <p>Sign up to start a new board.</p>}
       </header>
       <BoardList />
+      {props.authed && (
+        <div>
+          <Link className="btn" to="/new-board">
+            Create New Board
+          </Link>
+        </div>
+      )}
+      {!props.authed && <p>Sign up to create a new board.</p>}
     </section>
   );
 };
