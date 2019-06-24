@@ -12,17 +12,17 @@ exports[`matches snapshot w/ auth 1`] = `
     >
       All Boards
     </h1>
-    <p>
-      Click on a board to view threads.
-    </p>
+  </header>
+  <Connect(BoardList) />
+  <div>
     <Link
+      className="btn"
       replace={false}
       to="/new-board"
     >
-      Start a new Board.
+      Create New Board
     </Link>
-  </header>
-  <Connect(BoardList) />
+  </div>
 </section>
 `;
 
@@ -38,13 +38,10 @@ exports[`matches snapshot w/out auth 1`] = `
     >
       All Boards
     </h1>
-    <p>
-      Click on a board to view threads.
-    </p>
-    <p>
-      Sign up to start a new board.
-    </p>
   </header>
   <Connect(BoardList) />
+  <p>
+    Sign up to create a new board.
+  </p>
 </section>
 `;

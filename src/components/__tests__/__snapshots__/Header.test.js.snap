@@ -17,13 +17,6 @@ exports[`matches authenticated snapshot 1`] = `
     <Link
       className="header__nav-item"
       replace={false}
-      to="/new-board"
-    >
-      New Board
-    </Link>
-    <Link
-      className="header__nav-item"
-      replace={false}
       to="/signout"
     >
       Sign out

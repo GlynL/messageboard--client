@@ -1,28 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches snapshot 1`] = `
-<section>
+<section
+  className="container"
+>
   <header>
+    <Link
+      className=" btn btn--danger"
+      replace={false}
+      to="/"
+    >
+      Back To Boards
+    </Link>
     <h1>
-      Add New Board
+      Create New Board
     </h1>
   </header>
   <form
+    className="form"
     onSubmit={[Function]}
   >
     <label
+      className="form__label"
       htmlFor="name"
     >
       Name
     </label>
     <input
+      className="form__input"
       name="name"
       onChange={[Function]}
+      placeholder="sweet new board"
       type="text"
       value=""
     />
-    <button>
-      Add Board
+    <button
+      className="btn"
+    >
+      Create
     </button>
   </form>
 </section>

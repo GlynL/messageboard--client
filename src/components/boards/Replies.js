@@ -1,10 +1,8 @@
 import React from "react";
-import { connect } from "react-redux";
 import NewReply from "./NewReply";
 import "../../styles/replies.css";
 
 export const Replies = props => {
-  console.log(props.replies);
   const renderReplies = () =>
     props.replies.map(reply => (
       <li className="replies__list-item" key={reply._id}>
@@ -20,8 +18,4 @@ export const Replies = props => {
   );
 };
 
-// const mapStateToProps = state => ({
-//   replies: state.threads.activeThread.replies
-// });
-
-export default /* connect(mapStateToProps) */ Replies;
+export default Replies;

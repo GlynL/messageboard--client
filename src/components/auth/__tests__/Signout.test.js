@@ -2,10 +2,11 @@ import React from "react";
 import { shallow } from "enzyme";
 import { Signout } from "../Signout";
 
-let wrapper, signout;
+let wrapper, signout, history;
 beforeEach(() => {
   signout = jest.fn();
-  wrapper = shallow(<Signout signout={signout} />);
+  history = { push: jest.fn() };
+  wrapper = shallow(<Signout signout={signout} history={history} />);
 });
 
 it("renders Signout correctly", () => {

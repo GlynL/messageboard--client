@@ -2,17 +2,24 @@
 
 exports[`with board prop -loaded from componentDidMount matches snapshot 1`] = `
 <section>
-  <h1
-    className="board__title"
+  <div
+    className="board-header"
   >
-    test board
-  </h1>
+    <Link
+      className="btn btn--danger board-header__link"
+      replace={false}
+      to="/"
+    >
+      Back To All Boards
+    </Link>
+    <h1
+      className="board-header__title"
+    >
+      test board
+    </h1>
+  </div>
   <withRouter(Connect(Threads)) />
 </section>
 `;
 
-exports[`without board fetched matches snapshot 1`] = `
-<div>
-  loading...
-</div>
-`;
+exports[`without board fetched matches snapshot 1`] = `<_default />`;

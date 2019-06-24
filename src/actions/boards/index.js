@@ -1,11 +1,5 @@
 import { ROOT_URL } from "../../variables";
-import {
-  ADD_BOARD,
-  FETCH_BOARDS,
-  SET_ACTIVE,
-  BOARD_ERROR,
-  UPDATE_BOARD
-} from "./types";
+import { FETCH_BOARDS, SET_ACTIVE, BOARD_ERROR, UPDATE_BOARD } from "./types";
 
 export const addBoard = (form, token, callback) => async dispatch => {
   try {

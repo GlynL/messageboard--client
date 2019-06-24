@@ -55,20 +55,20 @@ describe("addBoard", () => {
     callback = jest.fn();
   });
 
-  it("creates ADD_BOARD when fetch addBoard done", async () => {
-    expect.assertions(2);
-    const board = { name: "test board" };
-    fetch.mockResponseOnce(JSON.stringify(board));
+  // it("creates ADD_BOARD when fetch addBoard done", async () => {
+  //   expect.assertions(2);
+  //   const board = { name: "test board" };
+  //   fetch.mockResponseOnce(JSON.stringify(board));
 
-    const expectedActions = [{ type: types.ADD_BOARD, payload: board }];
+  //   const expectedActions = [{ type: types.ADD_BOARD, payload: board }];
 
-    const initialState = {};
-    const store = mockStore(initialState);
+  //   const initialState = {};
+  //   const store = mockStore(initialState);
 
-    await store.dispatch(actions.addBoard({}, "token", callback));
-    expect(store.getActions()).toEqual(expectedActions);
-    expect(callback).toHaveBeenCalled();
-  });
+  //   await store.dispatch(actions.addBoard({}, "token", callback));
+  //   expect(store.getActions()).toEqual(expectedActions);
+  //   expect(callback).toHaveBeenCalled();
+  // });
 
   it("creates BOARD_ERROR when fetching addBoard error", async () => {
     expect.assertions(1);

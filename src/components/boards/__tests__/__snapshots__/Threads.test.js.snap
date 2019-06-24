@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches snapshot initial loading 1`] = `
-<div>
-  loading...
-</div>
-`;
+exports[`matches snapshot initial loading 1`] = `<_default />`;
 
 exports[`with board & thread prop matches snapshot w/ auth 1`] = `
 <div
@@ -15,14 +11,6 @@ exports[`with board & thread prop matches snapshot w/ auth 1`] = `
   >
     Threads
   </h1>
-  <div>
-    <Link
-      replace={false}
-      to="/mockboard/new-thread"
-    >
-      Start new thread.
-    </Link>
-  </div>
   <ul
     className="threads__list"
   >
@@ -69,6 +57,15 @@ exports[`with board & thread prop matches snapshot w/ auth 1`] = `
       </Link>
     </li>
   </ul>
+  <div>
+    <Link
+      className="btn"
+      replace={false}
+      to="/mockboard/new-thread"
+    >
+      Start new thread.
+    </Link>
+  </div>
 </div>
 `;
 
@@ -81,9 +78,6 @@ exports[`with board & thread prop matches snapshot w/out auth 1`] = `
   >
     Threads
   </h1>
-  <p>
-    Sign up to start your own thread.
-  </p>
   <ul
     className="threads__list"
   >
@@ -130,5 +124,8 @@ exports[`with board & thread prop matches snapshot w/out auth 1`] = `
       </Link>
     </li>
   </ul>
+  <p>
+    Sign up to start your own thread.
+  </p>
 </div>
 `;
